@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.65080994, g: 0.666729, b: 0.7075472, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.05
@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 124996733}
   - component: {fileID: 124996732}
   - component: {fileID: 124996731}
+  - component: {fileID: 124996735}
   m_Layer: 0
   m_Name: Bassist
   m_TagString: Untagged
@@ -215,6 +216,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &124996735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124996730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24da53314dc4f9af09b19f2465266cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thirst: 0
+  health: 0
 --- !u!1 &178649779
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +242,7 @@ GameObject:
   - component: {fileID: 178649782}
   - component: {fileID: 178649781}
   - component: {fileID: 178649780}
+  - component: {fileID: 178649784}
   m_Layer: 0
   m_Name: Guitarist
   m_TagString: Untagged
@@ -309,6 +325,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &178649784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178649779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b405218f2cbc0f1b0008921e0d1c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thirst: 0
+  health: 0
 --- !u!1 &571180851
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +351,7 @@ GameObject:
   - component: {fileID: 571180854}
   - component: {fileID: 571180853}
   - component: {fileID: 571180852}
+  - component: {fileID: 571180856}
   m_Layer: 0
   m_Name: Drummer
   m_TagString: Untagged
@@ -403,6 +434,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &571180856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571180851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f4766f82aa8346679922d8333bf234d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thirst: 0
+  health: 0
 --- !u!1 &653260035
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,7 +665,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472213716}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28503903f499c08489cb9ae3e58b1a51, type: 3}
   m_Name: 
@@ -796,6 +841,7 @@ GameObject:
   - component: {fileID: 1687258585}
   - component: {fileID: 1687258584}
   - component: {fileID: 1687258582}
+  - component: {fileID: 1687258583}
   - component: {fileID: 1687258586}
   - component: {fileID: 1687258587}
   m_Layer: 0
@@ -813,6 +859,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
   m_Enabled: 1
+--- !u!114 &1687258583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687258581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be76e5f14cfee674cb30b491fb72b09b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &1687258584
 Camera:
   m_ObjectHideFlags: 0
@@ -829,7 +887,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 458.2615
+  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -863,13 +921,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: -0, y: 0.9532576, z: -0.30215874, w: 0}
-  m_LocalPosition: {x: 4.44, y: 22.2, z: 22.3}
+  m_LocalRotation: {x: -0, y: -0.9992333, z: -0, w: -0.03915055}
+  m_LocalPosition: {x: 2.89, y: 6.82, z: 10.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 35.175003, y: 180.00002, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 175.51302, z: 0}
 --- !u!114 &1687258586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,6 +998,7 @@ GameObject:
   - component: {fileID: 1700093873}
   - component: {fileID: 1700093872}
   - component: {fileID: 1700093871}
+  - component: {fileID: 1700093875}
   m_Layer: 0
   m_Name: Singer
   m_TagString: Untagged
@@ -1022,6 +1081,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1700093875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700093870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598c5d2971b3e4167ba2fd6d36a776dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thirst: 0
+  health: 0
 --- !u!1 &2138677391
 GameObject:
   m_ObjectHideFlags: 0

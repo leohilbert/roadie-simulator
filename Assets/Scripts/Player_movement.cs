@@ -6,26 +6,19 @@ public class Player_movement : MonoBehaviour
 {
     public float moveSpeed = 0.1f;
 
+    //public string left, right, forward, backward;
+
     Vector3 movement;
 
     public Rigidbody rb;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.z = Input.GetAxisRaw("Vertical");
-        Debug.Log("x: " + movement.x + ", z:" + movement.z);
-    }
-
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position - movement * moveSpeed);
+        //Debug.Log("Left: " + Input.GetAxis(left) + ", right: " + Input.GetAxis(right));
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.z = Input.GetAxisRaw("Vertical");
+
+        //Vector3 next_position = new Vector3(gameObject.transform.position.x + Input.GetAxis(left);
+        rb.MovePosition(rb.position + movement * moveSpeed);
     }
 }

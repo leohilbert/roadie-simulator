@@ -13,19 +13,24 @@ public class Player_movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    PlayerInputActions inputActions;
+
+    Vector2 movementInput;
+
+    void Awake()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.z = Input.GetAxisRaw("Vertical");
-        Debug.Log("x: " + movement.x + ", z:" + movement.z);
+        inputActions = new PlayerInputActions();
+        inputActions.PlayerControls.Move.performed += ctx => movementInput = ctx.ReadValue<Vector2>();
     }
 
     private void FixedUpdate()
     {
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.z = Input.GetAxisRaw("Vertical");
+        Debug.Log("x: " + movement.x + ", z:" + movement.z);
         rb.MovePosition(rb.position - movement * moveSpeed);
     }
 }

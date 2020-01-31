@@ -21,7 +21,6 @@
 
 # Visual Studio cache directory
 .vs/
-.vscode/
 
 # Gradle cache directory
 .gradle/
@@ -113,3 +112,4 @@ $RECYCLE.BIN/
 *.lnk
 
 debug.log
+.vscode/settings.json

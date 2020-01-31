@@ -19,6 +19,6 @@ public class Player_movement : MonoBehaviour
         movement.z = Input.GetAxisRaw("Vertical");
 
         //Vector3 next_position = new Vector3(gameObject.transform.position.x + Input.GetAxis(left);
-        rb.MovePosition(rb.position + movement * moveSpeed);
+        rb.MovePosition(rb.position - movement * moveSpeed);
     }
 }

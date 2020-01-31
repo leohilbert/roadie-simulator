@@ -112,3 +112,4 @@ $RECYCLE.BIN/
 *.lnk
 
 debug.log
+.vscode/settings.json

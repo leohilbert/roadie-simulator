@@ -75,6 +75,8 @@ MonoBehaviour:
   target: {fileID: 0}
   circlepitPrefab: {fileID: 4727843176910532089, guid: ee1edd1ed793841fb99976b715ab8b1b,
     type: 3}
+  ragePrefab: {fileID: 6485830979691606102, guid: 0b35c585335ab4ae686d21dd8f4f3a19,
+    type: 3}
 --- !u!195 &6263639337985573087
 NavMeshAgent:
   m_ObjectHideFlags: 0

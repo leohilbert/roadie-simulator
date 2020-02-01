@@ -53,12 +53,10 @@ public class PlayerParams : MonoBehaviour
     public void SetOnStage(bool _onStage)
     {
         on_stage = _onStage;
-        Debug.Log(gameObject.name + " on stage: " + _onStage);
     }
 
     public void SetInCrowd(bool _inCrowd)
     {
         in_crowd = _inCrowd;
-        Debug.Log(gameObject.name + " in crowd: " + _inCrowd);
     }
 }

@@ -5,19 +5,20 @@ using UnityEngine;
 public class Singer : Musician
 {
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
-
+        base.Start();
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
-
+        base.Update();
     }
 
-    void FixedUpdate()
+    public override void FixedUpdate()
     {
+        base.FixedUpdate();
         this.gameObject.transform.Translate(Time.fixedDeltaTime, 0, 0);
     }
 }

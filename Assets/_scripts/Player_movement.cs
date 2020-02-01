@@ -65,7 +65,9 @@ public class Player_movement : MonoBehaviour
     {
         movement.x = movementInput.x;
         movement.z = movementInput.y;
+        Debug.Log($"{movement.x} {movementInput.y}");
         //Debug.Log("x: " + movement.x + ", z:" + movement.z);
         rb.MovePosition(rb.position - movement * moveSpeed);
-    }
+        rb.rotation = Quaternion.FromToRotation(Vector3.back, movement);
+    }       
 }

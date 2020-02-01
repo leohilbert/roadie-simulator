@@ -127,6 +127,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 374454920}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &198036322 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8905082913569785179, guid: be391f33ecfad38db8eac210b9cb32f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1900384625}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598c5d2971b3e4167ba2fd6d36a776dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &222791796
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +348,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a6951ec14b27ed4da27d13818dbebd2, type: 3}
+--- !u!114 &387054754 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4859325273585364696, guid: 43163b0697e46b51db19e804aebda878,
+    type: 3}
+  m_PrefabInstance: {fileID: 832417880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f4766f82aa8346679922d8333bf234d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &390873703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -433,10 +457,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicians:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 723857228}
+  - {fileID: 387054754}
+  - {fileID: 879467095}
+  - {fileID: 198036322}
   statusText: {fileID: 846557140}
   concertQuality: 0
 --- !u!4 &422097358
@@ -1051,6 +1075,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &723857228 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1849505618627372774, guid: 1befe3344ba09c97f9d706da9abd8d44,
+    type: 3}
+  m_PrefabInstance: {fileID: 256373388}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24da53314dc4f9af09b19f2465266cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &829471632
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,6 +1344,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 846557138}
   m_CullTransparentMesh: 0
+--- !u!114 &879467095 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 81535031601513994, guid: 970a44c8aa0e8caabb964a8bb83bc5be,
+    type: 3}
+  m_PrefabInstance: {fileID: 600307782}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b405218f2cbc0f1b0008921e0d1c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &942726660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1804,10 +1852,8 @@ GameObject:
   - component: {fileID: 1687258585}
   - component: {fileID: 1687258584}
   - component: {fileID: 1687258582}
-  - component: {fileID: 1687258583}
   - component: {fileID: 1687258586}
   - component: {fileID: 1687258587}
-  - component: {fileID: 1687258588}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1823,18 +1869,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
   m_Enabled: 1
---- !u!114 &1687258583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687258581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be76e5f14cfee674cb30b491fb72b09b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!20 &1687258584
 Camera:
   m_ObjectHideFlags: 0
@@ -1950,21 +1984,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1687258588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687258581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fccff6b5140381189a7cdab14b3257d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicians: []
-  statusText: {fileID: 0}
-  concertQuality: 0
 --- !u!1 &1733725572
 GameObject:
   m_ObjectHideFlags: 0

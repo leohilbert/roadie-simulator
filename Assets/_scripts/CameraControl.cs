@@ -18,14 +18,14 @@ public class CameraControl : MonoBehaviour
     public GameObject boxStage;
     public GameObject boxCrowd;
 
-    Vector3 camPosBoth = new Vector3(12.74f, 3.72f, -6.51f);
-    Quaternion camRotBoth = Quaternion.Euler(0, 0, 0);
+    Vector3 camPosBoth = new Vector3(13.3f, 8.4f, 2.6f);
+    Quaternion camRotBoth = Quaternion.identity;
 
     Vector3 camPosStage = new Vector3(12.8f, 2.1f, -14.5f);
-    Quaternion camRotStage = Quaternion.Euler(-3.64f, 0, 0);
+    Quaternion camRotStage = Quaternion.Euler(356.36f, 0, 0);
 
     Vector3 camPosCrowd = new Vector3(12.2f, -1.2f, -0.6f);
-    Quaternion camRotCrowd = Quaternion.Euler(-18.85f, 0, 0);
+    Quaternion camRotCrowd = Quaternion.Euler(341.15f, 0, 0);
 
     [Header("ShakeLevel")]
     [SerializeField] ShakeLevel shakeLevel = ShakeLevel.none;
@@ -66,15 +66,20 @@ public class CameraControl : MonoBehaviour
         if (player1.GetComponent<PlayerParams>().OnStage() && player2.GetComponent<PlayerParams>().OnStage())
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, camPosStage, 0.1f);
+            gameObject.transform.rotation = Quaternion.RotateTowards(gameObject.transform.rotation, camRotStage, 0.1f);
         }
         else if ((player1.GetComponent<PlayerParams>().OnStage() && player2.GetComponent<PlayerParams>().InCrowd()) ||
             player1.GetComponent<PlayerParams>().InCrowd() && player2.GetComponent<PlayerParams>().OnStage())
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, camPosBoth, 0.1f);
+            gameObject.transform.rotation = Quaternion.RotateTowards(gameObject.transform.rotation, camRotBoth, 0.1f);
+
         }
         else if(player1.GetComponent<PlayerParams>().InCrowd() && player2.GetComponent<PlayerParams>().InCrowd())
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, camPosCrowd, 0.1f);
+            gameObject.transform.rotation = Quaternion.RotateTowards(gameObject.transform.rotation, camRotCrowd, 0.1f);
+            Debug.Log("Move rotation to " + camRotCrowd + ", now at " + gameObject.transform.rotation.eulerAngles);
         }
 
     }

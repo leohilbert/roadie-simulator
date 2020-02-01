@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player_movement : MonoBehaviour
 {
@@ -16,20 +17,17 @@ public class Player_movement : MonoBehaviour
 
     }
 
-    PlayerInputActions inputActions;
-
     Vector2 movementInput;
 
-    void Awake()
+    void OnMove(InputValue value)
     {
-        inputActions = new PlayerInputActions();
-        inputActions.PlayerControls.Move.performed += ctx => movementInput = ctx.ReadValue<Vector2>();
+        movementInput = value.Get<Vector2>();
     }
 
     private void FixedUpdate()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.z = Input.GetAxisRaw("Vertical");
+        movement.x = movementInput.x;
+        movement.z = movementInput.y;
         Debug.Log("x: " + movement.x + ", z:" + movement.z);
         rb.MovePosition(rb.position - movement * moveSpeed);
     }

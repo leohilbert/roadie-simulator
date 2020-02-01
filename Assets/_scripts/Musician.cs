@@ -55,6 +55,16 @@ public class Musician : MonoBehaviour
                 audioSource.time = t;
             }
         }
+
+        if (equipment && (equipment.isBroken|| equipment.isFailing))
+        {
+            audioSource.mute = true;
+        }
+        else
+        {
+            audioSource.mute = false;
+        }
+
     }
     public virtual void FixedUpdate()
     {

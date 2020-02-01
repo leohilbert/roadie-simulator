@@ -58,7 +58,8 @@ public class Equipment : MonoBehaviour
         {
             dt.Explode();
         }
-        GetComponent<Renderer>().enabled = false;
+        
+        //GetComponent<Renderer>().enabled = false;
     }
 
     public void Fail()

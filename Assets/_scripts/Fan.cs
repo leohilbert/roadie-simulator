@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -12,19 +11,18 @@ public class Fan : MonoBehaviour
     internal Transform circlepitRoot;
     internal MainLogic mainLogic;
     public GameObject circlepitPrefab;
-    public GameObject ragePrefab;
 
     private NavMeshAgent agent;
     private float eventCooldown = EVENT_COOLDOWN_DURATION;
     private float chillTimer = 0;
     private float speed = 0;
-    private GameObject rage;
+
 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        speed = UnityEngine.Random.Range(1F, 3F);
+        speed = Random.Range(1F, 3F);
     }
 
     void Update()
@@ -45,10 +43,10 @@ public class Fan : MonoBehaviour
             else if (eventCooldown < 0)
             {
                 // Wenn die Qualität des Konzerts niedriger wird, soll es wahrscheinlicher sein, dass ein Fan eskaliert
-                if (1F >= Mathf.Pow(1 - mainLogic.concertQuality, 3F) + UnityEngine.Random.Range(0F, 1F))
+                if (Random.Range(0F,1F) > 1 - Mathf.Pow(mainLogic.concertQuality, 5F))
                 {
-                    target = mainLogic.musicians[UnityEngine.Random.Range(0, mainLogic.musicians.Length)].gameObject.transform;
-                    rage = Instantiate(ragePrefab, transform.position, Quaternion.identity, transform);
+                    target = mainLogic.musicians[Random.Range(0, mainLogic.musicians.Length)].gameObject.transform;
+                    
                     return;
                 }
                 if (circlepitRoot != null)
@@ -58,27 +56,17 @@ public class Fan : MonoBehaviour
             }
             else if (agent.remainingDistance <= agent.stoppingDistance)
             {
-                chillTimer = UnityEngine.Random.Range(0F, 20F);
-                agent.SetDestination(waypoints[UnityEngine.Random.Range(0, waypoints.Count)]);
+                chillTimer = Random.Range(0F, 20F);
+                agent.SetDestination(waypoints[Random.Range(0, waypoints.Count)]);
             }
         }
-    }
-
-    public void kick()
-    {
-        Debug.Log("kick");
-        target = null;
-
-        Rigidbody body = this.GetComponent<Rigidbody>();
-        body.isKinematic=false;
-        body.velocity += 20000 * Vector3.up;
     }
 
     public IEnumerator RunCirlePit()
     {
         GameObject circlepitPoint = Instantiate(circlepitPrefab, circlepitRoot.transform.position, Quaternion.identity, circlepitRoot);
         target = circlepitPoint.transform;
-        yield return new WaitForSeconds(UnityEngine.Random.Range(10F, 15F));
+        yield return new WaitForSeconds(Random.Range(10F, 15F));
         Destroy(circlepitPoint);
         eventCooldown = EVENT_COOLDOWN_DURATION;
     }

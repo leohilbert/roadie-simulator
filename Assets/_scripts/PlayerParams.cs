@@ -7,7 +7,12 @@ public class PlayerParams : MonoBehaviour
     bool on_stage = false;
     bool in_crowd = false;
 
-    public GameObject camObj;
+    GameObject camObj;
+
+    private void Start()
+    {
+        camObj = GameObject.Find("Camera");
+    }
 
     private void OnTriggerEnter(Collider other)
     {

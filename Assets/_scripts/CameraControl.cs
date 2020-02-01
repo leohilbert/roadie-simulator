@@ -79,9 +79,7 @@ public class CameraControl : MonoBehaviour
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, camPosCrowd, 0.1f);
             gameObject.transform.rotation = Quaternion.RotateTowards(gameObject.transform.rotation, camRotCrowd, 0.1f);
-            Debug.Log("Move rotation to " + camRotCrowd + ", now at " + gameObject.transform.rotation.eulerAngles);
         }
-
     }
 
 

@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
+    agentRadius: 0.2
+    agentHeight: 1
     agentSlope: 45
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.06666667
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -491,6 +491,10 @@ PrefabInstance:
       propertyPath: explodeOnStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 2a6951ec14b27ed4da27d13818dbebd2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a6951ec14b27ed4da27d13818dbebd2, type: 3}
 --- !u!114 &387054754 stripped
@@ -562,6 +566,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2a6951ec14b27ed4da27d13818dbebd2, type: 3}
       propertyPath: explodeOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 2a6951ec14b27ed4da27d13818dbebd2, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -679,6 +687,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2a6951ec14b27ed4da27d13818dbebd2, type: 3}
       propertyPath: explodeOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 2a6951ec14b27ed4da27d13818dbebd2, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1649,6 +1661,10 @@ PrefabInstance:
       propertyPath: explodeOnStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 2a6951ec14b27ed4da27d13818dbebd2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a6951ec14b27ed4da27d13818dbebd2, type: 3}
 --- !u!1 &971065327
@@ -1986,7 +2002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBroken: 0
   isFailing: 0
-  breakingProbability: 0.001
+  breakingProbability: 0.1
   failingProbability: 0.01
 --- !u!65 &1235025800
 BoxCollider:
@@ -2696,6 +2712,7 @@ MonoBehaviour:
   fanPrefab: {fileID: 8763557911231185764, guid: f62f5a22797b94fb69cd2dfda267021a,
     type: 3}
   circlepitRoot: {fileID: 222791797}
+  mainLogic: {fileID: 422097357}
 --- !u!4 &1767056486
 Transform:
   m_ObjectHideFlags: 0

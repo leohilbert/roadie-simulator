@@ -28,7 +28,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Jump"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""122a6ddb-22b4-41aa-9b28-402a3a11fb24"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -159,7 +159,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Jump"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""eb8b386f-5230-4278-bc00-6cafb077331f"",
                     ""expectedControlType"": """",
                     ""processors"": """",

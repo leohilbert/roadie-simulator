@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6706022128682957690}
   - component: {fileID: 6706022128682957691}
   m_Layer: 0
-  m_Name: Player_1
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.1
+  jumpSpeed: 4
   rb: {fileID: 6706022128682957690}
 --- !u!54 &6706022128682957690
 Rigidbody:

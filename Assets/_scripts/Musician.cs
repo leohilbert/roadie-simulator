@@ -97,7 +97,7 @@ public class Musician : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
         ReceiveBeer();
     }

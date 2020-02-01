@@ -11,11 +11,14 @@ public class Fan : MonoBehaviour
     internal Transform circlepitRoot;
     internal MainLogic mainLogic;
     public GameObject circlepitPrefab;
+    public GameObject ragePrefab;
 
     private NavMeshAgent agent;
     private float eventCooldown = EVENT_COOLDOWN_DURATION;
     private float chillTimer = 0;
     private float speed = 0;
+
+    private GameObject rage;
 
 
     // Start is called before the first frame update
@@ -43,10 +46,10 @@ public class Fan : MonoBehaviour
             else if (eventCooldown < 0)
             {
                 // Wenn die Qualität des Konzerts niedriger wird, soll es wahrscheinlicher sein, dass ein Fan eskaliert
-                if (Random.Range(0F,1F) > 1 - Mathf.Pow(mainLogic.concertQuality, 5F))
+                if (Random.Range(0F, 1F) > 1 - Mathf.Pow(mainLogic.concertQuality, 5F))
                 {
-                    target = mainLogic.musicians[Random.Range(0, mainLogic.musicians.Length)].gameObject.transform;
-                    
+                    target = mainLogic.musicians[UnityEngine.Random.Range(0, mainLogic.musicians.Length)].gameObject.transform;
+                    rage = Instantiate(ragePrefab, transform.position, Quaternion.identity, transform);
                     return;
                 }
                 if (circlepitRoot != null)
@@ -60,6 +63,16 @@ public class Fan : MonoBehaviour
                 agent.SetDestination(waypoints[Random.Range(0, waypoints.Count)]);
             }
         }
+    }
+
+    public void kick()
+    {
+        Debug.Log("kick");
+        target = null;
+
+        Rigidbody body = this.GetComponent<Rigidbody>();
+        body.isKinematic = false;
+        body.velocity += 20000 * Vector3.up;
     }
 
     public IEnumerator RunCirlePit()

@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.1
+  jumpSpeed: 4
   rb: {fileID: 6706022128682957690}
 --- !u!54 &6706022128682957690
 Rigidbody:

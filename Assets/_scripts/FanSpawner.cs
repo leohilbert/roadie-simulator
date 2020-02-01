@@ -7,9 +7,9 @@ public class FanSpawner : MonoBehaviour
     public MeshFilter spawnArea;
     public GameObject fanPrefab;
     public Transform circlepitRoot;
+    public MainLogic mainLogic;
 
     private float circlepitCooldown = 0f;
-
     private List<Fan> fans = new List<Fan>();
 
     void Start()
@@ -28,6 +28,7 @@ public class FanSpawner : MonoBehaviour
             var go = Instantiate(fanPrefab, point, Quaternion.identity, transform);
             Fan fan = go.GetComponent<Fan>();
             fan.waypoints = transformed;
+            fan.mainLogic = mainLogic;
             fans.Add(fan);
             if (spawnRate++ % 1.5F == 0)
             {

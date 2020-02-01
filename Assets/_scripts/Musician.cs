@@ -6,9 +6,9 @@ using UnityEngine;
 public class Musician : MonoBehaviour
 {
     // How thirsty the musician is. 1 = not thirsty, 0 = dying
-    public double thirst = 1.0;
+    public float thirst = 1.0f;
     // Health of the musician. 1 = fit, 0 = dead
-    public double health;
+    public float health;
 
     public GameObject beerSprite;
     public GameObject intrument;
@@ -58,9 +58,7 @@ public class Musician : MonoBehaviour
     }
     public virtual void FixedUpdate()
     {
-        System.Random random = new System.Random();
-
-        thirst -= random.NextDouble() * Time.fixedDeltaTime * 0.1;
+        thirst -= UnityEngine.Random.Range(0.0f, 1.0f) * Time.fixedDeltaTime * 0.1f;
     }
 
     public void ReceiveBeer()
@@ -68,7 +66,7 @@ public class Musician : MonoBehaviour
         thirst = Math.Max(thirst + 0.5f, 1.0f);
     }
 
-    public double GetStatus()
+    public float GetStatus()
     {
         return thirst;
     }

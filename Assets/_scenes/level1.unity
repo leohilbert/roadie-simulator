@@ -438,6 +438,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   statusText: {fileID: 846557140}
+  concertQuality: 0
 --- !u!4 &422097358
 Transform:
   m_ObjectHideFlags: 0
@@ -659,7 +660,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 487c987e71b52799f979e45efafa2902, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1117,7 +1118,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 487c987e71b52799f979e45efafa2902, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1432,7 +1433,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 487c987e71b52799f979e45efafa2902, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1534,7 +1535,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 487c987e71b52799f979e45efafa2902, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1649,7 +1650,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7d02fbe8397ad154eb9a9487c9beccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 487c987e71b52799f979e45efafa2902, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ab456dd5ec9a4b61930b6c642130c56, type: 3}
 --- !u!1001 &1539855331
@@ -1724,6 +1725,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6706022128682957686, guid: 7ab456dd5ec9a4b61930b6c642130c56,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 487c987e71b52799f979e45efafa2902, type: 2}
     - target: {fileID: 6706022128682957691, guid: 7ab456dd5ec9a4b61930b6c642130c56,
         type: 3}
       propertyPath: m_DefaultActionMap
@@ -1958,6 +1964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicians: []
   statusText: {fileID: 0}
+  concertQuality: 0
 --- !u!1 &1733725572
 GameObject:
   m_ObjectHideFlags: 0
@@ -2169,7 +2176,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 487c987e71b52799f979e45efafa2902, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

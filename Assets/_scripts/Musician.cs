@@ -99,6 +99,9 @@ public class Musician : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        ReceiveBeer();
+        if (other.GetComponent<CharacterController>())
+        {
+            ReceiveBeer();
+        }
     }
 }

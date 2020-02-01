@@ -43,7 +43,7 @@ public class Fan : MonoBehaviour
             else if (eventCooldown < 0)
             {
                 // Wenn die Qualität des Konzerts niedriger wird, soll es wahrscheinlicher sein, dass ein Fan eskaliert
-                if (1F >= Mathf.Pow(1 - mainLogic.concertQuality, 3F) + Random.Range(0F,1F))
+                if (Random.Range(0F,1F) > 1 - Mathf.Pow(mainLogic.concertQuality, 5F))
                 {
                     target = mainLogic.musicians[Random.Range(0, mainLogic.musicians.Length)].gameObject.transform;
                     

@@ -13,6 +13,8 @@ public class CameraControl : MonoBehaviour
     public GameObject boxStage;
     public GameObject boxCrowd;
 
+    public GameObject pointer;
+
     [Header("Set dynamically")]
     [SerializeField] GameObject player1;
     [SerializeField] GameObject player2;

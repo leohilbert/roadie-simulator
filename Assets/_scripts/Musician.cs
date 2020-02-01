@@ -52,4 +52,9 @@ public class Musician : MonoBehaviour
     {
         thirst = Math.Max(thirst + 0.5f, 1.0f);
     }
+
+    public double GetStatus()
+    {
+        return thirst;
+    }
 }

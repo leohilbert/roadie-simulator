@@ -5,24 +5,22 @@ using UnityEngine.InputSystem;
 
 public class Player_movement : MonoBehaviour
 {
-    public float moveSpeed = 0.1f;
-    public float jumpSpeed = 4f;
-    Vector3 movement;
+    public float moveSpeed = 6f;
+    public float jumpSpeed = 100f;
+    public float gravity = 25f;
+    public Vector3 moveDirection = Vector3.zero;
+    private float vSpeed = 0;
 
     List<GameObject> collided = new List<GameObject>();
-
-    public Rigidbody rb;
+    private CharacterController characterController;
 
     void Start()
     {
+        characterController = GetComponent<CharacterController>();
     }
 
     Vector2 movementInput;
-
-    void OnMove(InputValue value)
-    {
-        movementInput = value.Get<Vector2>();
-    }
+    bool jump;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -34,7 +32,7 @@ public class Player_movement : MonoBehaviour
         collided.Remove(collision.gameObject);
     }
 
-    void OnHit()
+    void OnHit(InputValue value)
     {
         Debug.Log("Onhit");
         foreach (GameObject collision in collided)
@@ -48,24 +46,35 @@ public class Player_movement : MonoBehaviour
         }
     }
 
-    void OnJump()
+    void OnMove(InputValue value)
     {
-        if (IsGrounded())
+        movementInput = -value.Get<Vector2>();
+    }
+
+    void OnJump(InputValue value)
+    {
+        jump = value.isPressed;
+    }
+
+    void Update()
+    {
+        moveDirection = new Vector3(movementInput.x, 0, movementInput.y);
+        if (moveDirection != Vector3.zero)
         {
-            rb.velocity += jumpSpeed * Vector3.up;
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDirection), 0.80F);
         }
-    }
 
-    bool IsGrounded()
-    {
-        return Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y + 0.1F);
-    }
-
-    private void FixedUpdate()
-    {
-        movement.x = movementInput.x;
-        movement.z = movementInput.y;
-        //Debug.Log("x: " + movement.x + ", z:" + movement.z);
-        rb.MovePosition(rb.position - movement * moveSpeed);
+        moveDirection *= moveSpeed;
+        if (characterController.isGrounded)
+        {
+            vSpeed = -1;
+            if (Input.GetButtonDown("Jump"))
+            {
+                vSpeed = jumpSpeed;
+            }
+        }
+        vSpeed -= gravity * Time.deltaTime;
+        moveDirection.y = vSpeed;
+        characterController.Move(moveDirection * Time.deltaTime);
     }
 }

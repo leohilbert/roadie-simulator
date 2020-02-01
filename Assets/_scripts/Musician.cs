@@ -81,7 +81,7 @@ public class Musician : MonoBehaviour
         return thirst;
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
         ReceiveBeer();
     }

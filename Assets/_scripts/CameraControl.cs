@@ -18,7 +18,9 @@ public class CameraControl : MonoBehaviour
     public GameObject boxStage;
     public GameObject boxCrowd;
 
-    private Transform mainTransform;
+    Vector3 camPosBoth = new Vector3(12.74f, 3.72f, -6.51f);
+    Quaternion camRotBoth = Quaternion.Euler(0, 0, 0);
+
     Vector3 camPosStage = new Vector3(12.8f, 2.1f, -14.5f);
     Quaternion camRotStage = Quaternion.Euler(-3.64f, 0, 0);
 
@@ -27,11 +29,6 @@ public class CameraControl : MonoBehaviour
 
     [Header("ShakeLevel")]
     [SerializeField] ShakeLevel shakeLevel = ShakeLevel.none;
-
-    private void Start()
-    {
-        mainTransform = gameObject.transform;
-    }
 
     // Update is called once per frame
     void Update()
@@ -68,16 +65,16 @@ public class CameraControl : MonoBehaviour
 
         if (player1.GetComponent<PlayerParams>().OnStage() && player2.GetComponent<PlayerParams>().OnStage())
         {
-            Vector3.MoveTowards(gameObject.transform.position, camPosStage, 0.1f);
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, camPosStage, 0.1f);
         }
         else if ((player1.GetComponent<PlayerParams>().OnStage() && player2.GetComponent<PlayerParams>().InCrowd()) ||
             player1.GetComponent<PlayerParams>().InCrowd() && player2.GetComponent<PlayerParams>().OnStage())
         {
-            Vector3.MoveTowards(gameObject.transform.position, mainTransform.position, 0.1f);
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, camPosBoth, 0.1f);
         }
         else if(player1.GetComponent<PlayerParams>().InCrowd() && player2.GetComponent<PlayerParams>().InCrowd())
         {
-            Vector3.MoveTowards(gameObject.transform.position, camPosCrowd, 0.1f);
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, camPosCrowd, 0.1f);
         }
 
     }

@@ -18,8 +18,10 @@ public class Musician : MonoBehaviour
     public AudioSource audioSource;
 
     public AudioClip clipNoError;
-    
+
     public AudioClip clipRhyhthm;
+
+    public AudioClip clipEquipment;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -30,41 +32,48 @@ public class Musician : MonoBehaviour
         thirst = UnityEngine.Random.Range(0.7f, 1.0f);
     }
 
+    void ChangeClip(AudioClip clip)
+    {
+        if (clip && (audioSource.clip != clip))
+        {
+            float t = audioSource.time;
+            audioSource.clip = clip;
+            audioSource.Play();
+            audioSource.time = t;
+            audioSource.mute = false;
+        } else if (clip == null) {
+            audioSource.mute = true;
+        }
+    }
+
     // Update is called once per frame
     public virtual void Update()
     {
+        AudioClip clip = clipNoError;
+
         if (thirst < 0.5)
         {
             beerSprite.GetComponent<Renderer>().enabled = true;
-            if (audioSource.clip != clipRhyhthm)
-            {
-                float t = audioSource.time;
-                audioSource.clip = clipRhyhthm;
-                audioSource.Play();
-                audioSource.time = t;
-            }
+            clip = clipRhyhthm;
         }
         else
         {
             beerSprite.GetComponent<Renderer>().enabled = false;
-            if (audioSource.clip != clipNoError)
+        }
+
+        if (equipment)
+        {
+            if (equipment.isFailing)
             {
-                float t = audioSource.time;
-                audioSource.clip = clipNoError;
-                audioSource.Play();
-                audioSource.time = t;
+                ChangeClip(clipEquipment);
+            }
+            else if (equipment.isBroken)
+            {
+                clip = null;
             }
         }
 
-        if (equipment && (equipment.isBroken|| equipment.isFailing))
-        {
-            audioSource.mute = true;
-        }
-        else
-        {
-            audioSource.mute = false;
-        }
-
+        ChangeClip(clip);
     }
     public virtual void FixedUpdate()
     {
@@ -78,7 +87,14 @@ public class Musician : MonoBehaviour
 
     public float GetStatus()
     {
-        return thirst;
+        if (equipment && (equipment.isBroken || equipment.isFailing))
+        {
+            return thirst / 2.0f;
+        }
+        else
+        {
+            return thirst;
+        }
     }
 
     void OnCollisionEnter(Collision collision)

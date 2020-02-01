@@ -55,6 +55,7 @@ MonoBehaviour:
   audioSource: {fileID: 4648781248151721370}
   clipNoError: {fileID: 8300000, guid: 4b5af3aa0a7d5c78ea17819f56736ec6, type: 3}
   clipRhyhthm: {fileID: 8300000, guid: b5a02ffe513f1d26ebc993a4fd7cbea3, type: 3}
+  clipEquipment: {fileID: 8300000, guid: 37a90eeae5a87b9128f19606162f6a1c, type: 3}
 --- !u!136 &2149492782544993068
 CapsuleCollider:
   m_ObjectHideFlags: 0

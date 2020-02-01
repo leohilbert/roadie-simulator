@@ -479,6 +479,11 @@ PrefabInstance:
         type: 3}
       propertyPath: clipRhyhthm
       value: 
+      objectReference: {fileID: 8300000, guid: b5a02ffe513f1d26ebc993a4fd7cbea3, type: 3}
+    - target: {fileID: 1849505618627372774, guid: 1befe3344ba09c97f9d706da9abd8d44,
+        type: 3}
+      propertyPath: clipEquipment
+      value: 
       objectReference: {fileID: 8300000, guid: 37a90eeae5a87b9128f19606162f6a1c, type: 3}
     - target: {fileID: 3988314116750805734, guid: 1befe3344ba09c97f9d706da9abd8d44,
         type: 3}
@@ -1004,6 +1009,16 @@ PrefabInstance:
       propertyPath: equipment
       value: 
       objectReference: {fileID: 579847371}
+    - target: {fileID: 81535031601513994, guid: 970a44c8aa0e8caabb964a8bb83bc5be,
+        type: 3}
+      propertyPath: clipEquipment
+      value: 
+      objectReference: {fileID: 8300000, guid: 5add86664c5fcc6a095491ddbb6392ea, type: 3}
+    - target: {fileID: 81535031601513994, guid: 970a44c8aa0e8caabb964a8bb83bc5be,
+        type: 3}
+      propertyPath: clipRhyhthm
+      value: 
+      objectReference: {fileID: 8300000, guid: 1f4257d4ce02369d7823a3aa3a33ed28, type: 3}
     - target: {fileID: 3767775326605095314, guid: 970a44c8aa0e8caabb964a8bb83bc5be,
         type: 3}
       propertyPath: m_Name
@@ -1147,6 +1162,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 816323341306565642, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1774
+      objectReference: {fileID: 0}
+    - target: {fileID: 816323341306565642, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0075
+      objectReference: {fileID: 0}
+    - target: {fileID: 816323341306565642, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.8284897
+      objectReference: {fileID: 0}
+    - target: {fileID: 816323341306565642, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5600043
+      objectReference: {fileID: 0}
+    - target: {fileID: 816323341306565642, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 111.888
+      objectReference: {fileID: 0}
+    - target: {fileID: 816323341306565642, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 816323341306565642, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 938295302430683889, guid: b89e9a0a7870199eaab8cea74b6fdcad,
         type: 3}
@@ -1302,6 +1352,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2684056957632788921, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_Name
+      value: Spot Drums
       objectReference: {fileID: 0}
     - target: {fileID: 2800407635390709073, guid: b89e9a0a7870199eaab8cea74b6fdcad,
         type: 3}
@@ -1473,6 +1528,46 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 4913054659967311743, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.8457722
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913054659967311743, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.53354424
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913054659967311743, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 115.509995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913054659967311743, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913054659967311743, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913054659967311743, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1136
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913054659967311743, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0801
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913054659967311743, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0135
+      objectReference: {fileID: 0}
     - target: {fileID: 5005182923328149492, guid: b89e9a0a7870199eaab8cea74b6fdcad,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1523,6 +1618,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 5433364605299585492, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 5436771397311363883, guid: b89e9a0a7870199eaab8cea74b6fdcad,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1547,6 +1647,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746541981343052246, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_Name
+      value: Spot Vocals
       objectReference: {fileID: 0}
     - target: {fileID: 5824272293632706815, guid: b89e9a0a7870199eaab8cea74b6fdcad,
         type: 3}
@@ -1728,6 +1833,46 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 7354595351741511657, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0385
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354595351741511657, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1347
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354595351741511657, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7980292
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354595351741511657, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6026189
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354595351741511657, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 105.884995
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354595351741511657, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354595351741511657, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354595351741511657, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0632
+      objectReference: {fileID: 0}
     - target: {fileID: 7384568060277977035, guid: b89e9a0a7870199eaab8cea74b6fdcad,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1803,6 +1948,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 8049525418411524602, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_Name
+      value: Spot Bass
+      objectReference: {fileID: 0}
     - target: {fileID: 8069622288797735358, guid: b89e9a0a7870199eaab8cea74b6fdcad,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1812,6 +1962,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124395156231984164, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0791
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124395156231984164, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.057
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124395156231984164, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1418
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124395156231984164, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.82748425
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124395156231984164, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.56148905
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124395156231984164, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 111.68201
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124395156231984164, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124395156231984164, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 8143248088968865733, guid: b89e9a0a7870199eaab8cea74b6fdcad,
         type: 3}
@@ -1842,6 +2032,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423765640026759635, guid: b89e9a0a7870199eaab8cea74b6fdcad,
+        type: 3}
+      propertyPath: m_Name
+      value: Spot Guitar
       objectReference: {fileID: 0}
     - target: {fileID: 8737697287049089291, guid: b89e9a0a7870199eaab8cea74b6fdcad,
         type: 3}
@@ -2241,6 +2436,16 @@ PrefabInstance:
       propertyPath: equipment
       value: 
       objectReference: {fileID: 1566174715}
+    - target: {fileID: 4859325273585364696, guid: 43163b0697e46b51db19e804aebda878,
+        type: 3}
+      propertyPath: clipEquipment
+      value: 
+      objectReference: {fileID: 8300000, guid: 84d23ab3b4582729aa50bd8ab025bd5f, type: 3}
+    - target: {fileID: 4859325273585364696, guid: 43163b0697e46b51db19e804aebda878,
+        type: 3}
+      propertyPath: clipRhyhthm
+      value: 
+      objectReference: {fileID: 8300000, guid: 598e037d5e77e61d7b8cee1abcd9a8e8, type: 3}
     - target: {fileID: 4861902253347056908, guid: 43163b0697e46b51db19e804aebda878,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4015,6 +4220,11 @@ PrefabInstance:
       propertyPath: equipment
       value: 
       objectReference: {fileID: 829471633}
+    - target: {fileID: 8905082913569785179, guid: be391f33ecfad38db8eac210b9cb32f3,
+        type: 3}
+      propertyPath: clipEquipment
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e45f8353fb5f3366b4c063557532bf5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be391f33ecfad38db8eac210b9cb32f3, type: 3}
 --- !u!4 &1935755781 stripped

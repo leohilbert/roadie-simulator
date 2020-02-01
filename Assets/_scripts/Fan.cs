@@ -46,7 +46,7 @@ public class Fan : MonoBehaviour
             else if (eventCooldown < 0)
             {
                 // Wenn die Qualität des Konzerts niedriger wird, soll es wahrscheinlicher sein, dass ein Fan eskaliert
-                if (Random.Range(0F, 1F) > 1 - Mathf.Pow(mainLogic.concertQuality, 5F))
+                if (Random.Range(0F, 1F) < Mathf.Pow(1.0f - mainLogic.concertQuality, 32F))
                 {
                     target = mainLogic.musicians[UnityEngine.Random.Range(0, mainLogic.musicians.Length)].gameObject.transform;
                     rage = Instantiate(ragePrefab, transform.position, Quaternion.identity, transform);
@@ -71,7 +71,7 @@ public class Fan : MonoBehaviour
         target = null;
 
         Rigidbody body = this.GetComponent<Rigidbody>();
-        body.isKinematic = false;
+        //body.isKinematic = false;
         body.velocity += 20000 * Vector3.up;
     }
 

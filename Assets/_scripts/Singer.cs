@@ -19,7 +19,7 @@ public class Singer : Musician
     public override void FixedUpdate()
     {
         base.FixedUpdate();
-        this.gameObject.transform.Translate(Time.fixedDeltaTime, 0, 0);
+        //this.gameObject.transform.Translate(Time.fixedDeltaTime, 0, 0);
     }
 }
 

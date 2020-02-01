@@ -1,24 +1,33 @@
-﻿using System.Collections;
-using System;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Musician : MonoBehaviour
 {
     // How thirsty the musician is. 1 = not thirsty, 0 = dying
-    public double thirst = 1.0;
+    public float thirst = 1.0f;
     // Health of the musician. 1 = fit, 0 = dead
-    public double health;
+    public float health;
 
     public GameObject beerSprite;
     public GameObject intrument;
 
+    public Equipment equipment;
+
     public AudioSource audioSource;
+
+    public AudioClip clipNoError;
+    
+    public AudioClip clipRhyhthm;
 
     // Start is called before the first frame update
     public virtual void Start()
     {
         beerSprite.GetComponent<Renderer>().enabled = false;
+        audioSource.clip = clipNoError;
+        audioSource.Play();
+        thirst = UnityEngine.Random.Range(0.7f, 1.0f);
     }
 
     // Update is called once per frame
@@ -27,25 +36,29 @@ public class Musician : MonoBehaviour
         if (thirst < 0.5)
         {
             beerSprite.GetComponent<Renderer>().enabled = true;
-            if (audioSource.isPlaying)
+            if (audioSource.clip != clipRhyhthm)
             {
-                audioSource.Stop();
+                float t = audioSource.time;
+                audioSource.clip = clipRhyhthm;
+                audioSource.Play();
+                audioSource.time = t;
             }
         }
         else
         {
             beerSprite.GetComponent<Renderer>().enabled = false;
-            if (!audioSource.isPlaying)
+            if (audioSource.clip != clipNoError)
             {
+                float t = audioSource.time;
+                audioSource.clip = clipNoError;
                 audioSource.Play();
+                audioSource.time = t;
             }
         }
     }
     public virtual void FixedUpdate()
     {
-        System.Random random = new System.Random();
-
-        thirst -= random.NextDouble() * Time.fixedDeltaTime * 0.1;
+        thirst -= UnityEngine.Random.Range(0.0f, 1.0f) * Time.fixedDeltaTime * 0.1f;
     }
 
     public void ReceiveBeer()
@@ -53,8 +66,13 @@ public class Musician : MonoBehaviour
         thirst = Math.Max(thirst + 0.5f, 1.0f);
     }
 
-    public double GetStatus()
+    public float GetStatus()
     {
         return thirst;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        ReceiveBeer();
     }
 }

@@ -5,21 +5,33 @@ using UnityEngine;
 public class FanSpawner : MonoBehaviour
 {
     public MeshFilter spawnArea;
-    public GameObject prefab;
+    public GameObject fanPrefab;
+    public Transform circlepitRoot;
 
-    // Start is called before the first frame update
+    private float circlepitCooldown = 0f;
+
+    private List<Fan> fans = new List<Fan>();
+
     void Start()
     {
         Vector3[] vertices = spawnArea.mesh.vertices;
-        Debug.Log(spawnArea.mesh.vertexCount);
         int spawnRate = 0;
+
+        List<Vector3> transformed = new List<Vector3>();
         foreach (Vector3 point in vertices)
         {
-            Vector3 transformedPoint = Vector3.Scale(point, spawnArea.transform.localScale) + spawnArea.transform.position;
-            if (spawnRate++ % 3 == 0)
-            {
+            transformed.Add(spawnArea.transform.TransformPoint(point));
+        }
 
-                var fan = Instantiate(prefab, transformedPoint, Quaternion.identity);
+        foreach (Vector3 point in transformed)
+        {
+            var go = Instantiate(fanPrefab, point, Quaternion.identity, transform);
+            Fan fan = go.GetComponent<Fan>();
+            fan.waypoints = transformed;
+            fans.Add(fan);
+            if (spawnRate++ % 1.5F == 0)
+            {
+                fan.circlepitRoot = circlepitRoot;
             }
         }
     }

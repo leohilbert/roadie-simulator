@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6084789348843805692}
+  - component: {fileID: 8671129709876541396}
   m_Layer: 0
   m_Name: BassAmp
   m_TagString: Untagged
@@ -32,6 +33,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8671129709876541396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6084789348843805681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fabb5fe7dab649e5ea2353f4fef9a8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBroken: 0
+  isFailing: 0
+  breakingProbability: 0.0001
+  failingProbability: 0.001
 --- !u!1 &7816689457615900544
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,9 +61,9 @@ GameObject:
   - component: {fileID: 6412274718348342573}
   - component: {fileID: 6420119003627386747}
   - component: {fileID: 5583666620976875562}
-  - component: {fileID: 5822864651334551489}
   - component: {fileID: 682635951712626133}
   - component: {fileID: 2526650605472459642}
+  - component: {fileID: 8983767556347045946}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -128,22 +145,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5822864651334551489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7816689457615900544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7344fda77d86863498c1a3bcd244d125, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isBroken: 0
-  isFailing: 0
-  breakingProbability: 0.0001
-  failingProbability: 0.01
 --- !u!65 &682635951712626133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -173,6 +174,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8983767556347045946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7816689457615900544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fabb5fe7dab649e5ea2353f4fef9a8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBroken: 0
+  isFailing: 0
+  breakingProbability: 0.0001
+  failingProbability: 0.001
 --- !u!1001 &6084789349686648575
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: 6912430186545017706
     second: metarig.003|Gitarre_Idle
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gitarrist
+    second: {fileID: 2100000, guid: f72426bea6cfc9968b55669cebe4a365, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

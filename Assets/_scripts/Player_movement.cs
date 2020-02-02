@@ -11,6 +11,8 @@ public class Player_movement : MonoBehaviour
     public Vector3 moveDirection = Vector3.zero;
     private float vSpeed = 0;
 
+    private Equipment equipment;
+
     List<GameObject> collided = new List<GameObject>();
     private CharacterController characterController;
 
@@ -34,6 +36,21 @@ public class Player_movement : MonoBehaviour
 
     void OnHit(InputValue value)
     {
+        Debug.Log(equipment);
+        if (equipment)
+        {
+            // drop equipment
+
+            // set player as parent
+            equipment.transform.parent = null; //transform.parent;
+
+            // physics again
+            equipment.GetComponent<Rigidbody>().isKinematic = false;
+
+            // no more
+            equipment = null;
+        }
+
         foreach (GameObject collision in collided)
         {
             Fan fan = collision.GetComponent<Fan>();
@@ -44,11 +61,24 @@ public class Player_movement : MonoBehaviour
             }
 
             Equipment e = collision.GetComponent<Equipment>();
-            if (e)
+            if (e && !equipment)
             {
+                // remember me
+                equipment = e;
+
+                // set player as parent
                 e.transform.parent = transform;
+
+                // no more physics
+                e.GetComponent<Rigidbody>().isKinematic = true;
+
+                // place infront of player
+                e.transform.localPosition = (Vector3.forward * 0.5f + Vector3.up * 1.5f);
+                e.transform.localRotation = Quaternion.identity;
             }
         }
+
+
     }
 
     void OnMove(InputValue value)

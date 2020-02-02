@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: -4289683395438842329
     second: metarig.000|Singen_Idle
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Voice
+    second: {fileID: 2100000, guid: 1130939715be41551bf10e1f815e9288, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

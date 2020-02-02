@@ -26,6 +26,20 @@ public class Equipment : MonoBehaviour
         
     }
 
+   void OnTriggerEnter(Collider collider)
+    {
+        Equipment e = collider.gameObject.GetComponent<Equipment>();
+        Debug.Log("Equ placed:" + e);
+        if (e && e.GetType() == GetType() && isBroken)
+        {
+            isBroken = false;
+            GameObject p = collider.gameObject;
+            while (p.transform.parent)
+                p = p.transform.parent.gameObject;
+            Destroy(p);
+        }
+    }
+
     public virtual void FixedUpdate()
     {
         if (!isBroken)

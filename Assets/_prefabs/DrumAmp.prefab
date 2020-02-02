@@ -143,6 +143,8 @@ MonoBehaviour:
   isFailing: 0
   breakingProbability: 0.0001
   failingProbability: 0.001
+  smokePrefab: {fileID: 6485830979691606102, guid: 0b35c585335ab4ae686d21dd8f4f3a19,
+    type: 3}
 --- !u!1001 &66745011535487086
 PrefabInstance:
   m_ObjectHideFlags: 0

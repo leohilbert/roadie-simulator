@@ -79,7 +79,7 @@ public class Musician : MonoBehaviour
     }
     public virtual void FixedUpdate()
     {
-        thirst = Math.Max(0.0f, thirst - UnityEngine.Random.Range(0.0f, 1.0f) * Time.fixedDeltaTime * 0.1f);
+        thirst = Math.Max(0.0f, thirst - UnityEngine.Random.Range(0.0f, 1.0f) * Time.fixedDeltaTime * 0.05f);
     }
 
     public void ReceiveBeer()

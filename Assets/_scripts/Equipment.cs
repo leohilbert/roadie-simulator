@@ -13,6 +13,11 @@ public class Equipment : MonoBehaviour
 
     public double failingProbability = 0.001;
 
+    public GameObject smokePrefab;
+
+        private GameObject smoke;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +42,8 @@ public class Equipment : MonoBehaviour
             //while (p.transform.parent)
             //    p = p.transform.parent.gameObject;
             Destroy(p);
+
+            if (smoke) Destroy(smoke);
         }
     }
 
@@ -73,6 +80,8 @@ public class Equipment : MonoBehaviour
             dt.Explode();
         }
         
+        smoke = Instantiate(smokePrefab, transform.position, Quaternion.identity, transform);
+
         //GetComponent<Renderer>().enabled = false;
     }
 

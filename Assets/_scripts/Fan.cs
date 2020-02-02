@@ -30,7 +30,7 @@ public class Fan : MonoBehaviour
 
     void Update()
     {
-        if (!agent.isActiveAndEnabled)
+        if (!agent.isActiveAndEnabled || !agent.isOnNavMesh)
         {
             return;
         }
@@ -72,17 +72,32 @@ public class Fan : MonoBehaviour
     public void kick(Transform kicker)
     {
         Debug.Log("kick");
-        target = null;
 
         Vector3 origin = transform.position - kicker.position;
         origin.Normalize();
         origin.y = 1;
-        Debug.Log(origin);
+        agent.enabled = false;
+        StartCoroutine(RunCoroutineKick(origin));
+    }
+
+    public IEnumerator RunCoroutineKick(Vector3 origin)
+    {
+        target = null;
+        if (rage) Destroy(rage);
+
         Rigidbody body = this.GetComponent<Rigidbody>();
         body.isKinematic = false;
-        GetComponent<NavMeshAgent>().enabled = false;
+
         float force = Random.Range(1F, 5F);
-        body.velocity = Vector3.Scale(origin, new Vector3(force, 10, force));
+        body.AddForce(Vector3.Scale(origin, new Vector3(force, 10, force)), ForceMode.Impulse);
+        body.AddTorque(new Vector3(Random.Range(0F, 10F), Random.Range(0F, 10F), Random.Range(0F, 10F)), ForceMode.Impulse);
+
+        yield return new WaitForSeconds(10);
+
+        body.isKinematic = true;
+        body.rotation = Quaternion.identity;
+
+        agent.enabled = true;
     }
 
     public IEnumerator RunCirlePit()

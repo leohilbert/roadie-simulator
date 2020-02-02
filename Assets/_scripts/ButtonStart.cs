@@ -27,7 +27,7 @@ public class ButtonStart : MonoBehaviour
         // Wait for one second
         yield return new WaitForSeconds(2f);
         
-        SceneManager.LoadScene("levelCamera2");
+        SceneManager.LoadScene("level1");
     }
 
     public IEnumerator ScreenFadeOut()
@@ -41,7 +41,6 @@ public class ButtonStart : MonoBehaviour
             x += 4f / 256f;
             color.a = x;
             GameObject.Find("Canvas/BlackScreen").GetComponent<Image>().color = color;
-            Debug.Log("color.a " + color.a);
             yield return new WaitForSeconds(1f / 256f);
         }
     }

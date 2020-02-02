@@ -13,8 +13,6 @@ public class Player_movement : MonoBehaviour
 
     private Equipment equipment;
 
-    private Transform equipmentObj;
-
     private Transform equipmentParent;
 
     List<GameObject> collided = new List<GameObject>();
@@ -46,7 +44,7 @@ public class Player_movement : MonoBehaviour
             Debug.Log("drop equipoment");
 
             // set player as parent
-            equipmentObj.parent = equipmentParent; //transform.parent;
+            equipment.transform.parent = equipmentParent;
 
             // physics again
             equipment.GetComponent<Rigidbody>().isKinematic = false;
@@ -73,18 +71,17 @@ public class Player_movement : MonoBehaviour
 
                 // remember me
                 equipment = e;
-                equipmentObj = e.transform.parent;
-                equipmentParent = equipmentObj.parent;
+                equipmentParent = equipment.transform.parent;
 
                 // set player as parent
-                equipmentObj.parent = transform;
+                equipment.transform.parent = transform;
 
                 // no more physics
-                e.GetComponent<Rigidbody>().isKinematic = true;
+                equipment.GetComponent<Rigidbody>().isKinematic = true;
 
                 // place infront of player
-                equipmentObj.localPosition = (Vector3.forward * 0.5f + Vector3.up * 1.5f);
-                equipmentObj.localRotation = Quaternion.identity;
+                equipment.transform.localPosition = (Vector3.forward * 0.5f + Vector3.up * 1.5f);
+                equipment.transform.localRotation = Quaternion.identity;
             }
         }
 

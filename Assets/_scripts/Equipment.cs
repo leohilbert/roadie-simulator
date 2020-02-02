@@ -33,7 +33,7 @@ public class Equipment : MonoBehaviour
         if (e && e.GetType() == GetType() && isBroken)
         {
             isBroken = false;
-            GameObject p = collider.transform.parent.gameObject;
+            GameObject p = collider.gameObject;
             //while (p.transform.parent)
             //    p = p.transform.parent.gameObject;
             Destroy(p);
@@ -64,11 +64,11 @@ public class Equipment : MonoBehaviour
 
     public void Break()
     {
-        foreach (ParticleSystem ps in transform.parent.GetComponentsInChildren<ParticleSystem>())
+        foreach (ParticleSystem ps in GetComponentsInChildren<ParticleSystem>())
         {
             ps.Play();
         }
-        foreach (Detonator dt in transform.parent.GetComponentsInChildren<Detonator>())
+        foreach (Detonator dt in GetComponentsInChildren<Detonator>())
         {
             dt.Explode();
         }

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Player_movement : MonoBehaviour
 {
-    private static string ANIM_NAME = "";
+    private static string ANIM_NAME = "Speed";
 
     public float moveSpeed = 6f;
     public float jumpSpeed = 100f;

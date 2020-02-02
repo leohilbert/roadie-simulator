@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Fan : MonoBehaviour
 {
     private static float EVENT_COOLDOWN_DURATION = 10F;
-    private static string ANIM_NAME = "";
+    private static string ANIM_NAME = "IdleState";
     public Transform target;
     internal List<Vector3> waypoints;
     internal Transform circlepitRoot;

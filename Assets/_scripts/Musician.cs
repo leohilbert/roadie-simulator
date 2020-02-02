@@ -41,7 +41,9 @@ public class Musician : MonoBehaviour
             audioSource.Play();
             audioSource.time = t;
             audioSource.mute = false;
-        } else if (clip == null) {
+        }
+        else if (clip == null)
+        {
             audioSource.mute = true;
         }
     }
@@ -65,7 +67,7 @@ public class Musician : MonoBehaviour
         {
             if (equipment.isFailing)
             {
-                ChangeClip(clipEquipment);
+                clip = clipEquipment;
             }
             else if (equipment.isBroken)
             {
@@ -77,24 +79,32 @@ public class Musician : MonoBehaviour
     }
     public virtual void FixedUpdate()
     {
-        thirst -= UnityEngine.Random.Range(0.0f, 1.0f) * Time.fixedDeltaTime * 0.1f;
+        thirst = Math.Max(0.0f, thirst - UnityEngine.Random.Range(0.0f, 1.0f) * Time.fixedDeltaTime * 0.1f);
     }
 
     public void ReceiveBeer()
     {
-        thirst = Math.Max(thirst + 0.5f, 1.0f);
+        thirst = Math.Max(0.0f, Math.Min(thirst + 0.5f, 1.0f));
     }
 
     public float GetStatus()
     {
-        if (equipment && (equipment.isBroken || equipment.isFailing))
+        float status = thirst;
+
+        if (equipment)
         {
-            return thirst / 2.0f;
+            if (equipment.isBroken)
+            {
+                return 0;
+            }
+            else if (equipment.isFailing)
+            {
+                return thirst / 2.0f;
+            }
+
         }
-        else
-        {
-            return thirst;
-        }
+
+        return thirst;
     }
 
     void OnTriggerEnter(Collider other)

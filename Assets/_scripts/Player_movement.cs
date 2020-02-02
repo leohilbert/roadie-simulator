@@ -24,6 +24,7 @@ public class Player_movement : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision);
         collided.Add(collision.gameObject);
     }
 
@@ -42,6 +43,12 @@ public class Player_movement : MonoBehaviour
             if (fan != null)
             {
                 fan.kick();
+            }
+
+            Equipment e = collision.GetComponent<Equipment>();
+            if (e)
+            {
+                e.transform.parent = transform;
             }
         }
     }

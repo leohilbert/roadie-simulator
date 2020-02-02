@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Fan : MonoBehaviour
 {
     private static float EVENT_COOLDOWN_DURATION = 10F;
+    private static string ANIM_NAME = "";
     public Transform target;
     internal List<Vector3> waypoints;
     internal Transform circlepitRoot;
@@ -19,13 +20,14 @@ public class Fan : MonoBehaviour
     private float speed = 0;
 
     private GameObject rage;
-
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         speed = Random.Range(1F, 3F);
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -47,24 +49,29 @@ public class Fan : MonoBehaviour
             {
                 chillTimer -= Time.deltaTime;
             }
-            else if (eventCooldown < 0)
+            else
             {
-                // Wenn die Qualität des Konzerts niedriger wird, soll es wahrscheinlicher sein, dass ein Fan eskaliert
-                if (Random.Range(0F, 1F) < Mathf.Pow(1.0f - mainLogic.concertQuality, 32F))
+                anim.SetFloat(ANIM_NAME, 1F);
+                if (eventCooldown < 0)
                 {
-                    target = mainLogic.musicians[UnityEngine.Random.Range(0, mainLogic.musicians.Length)].gameObject.transform;
-                    rage = Instantiate(ragePrefab, transform.position, Quaternion.identity, transform);
-                    return;
+                    // Wenn die Qualität des Konzerts niedriger wird, soll es wahrscheinlicher sein, dass ein Fan eskaliert
+                    if (Random.Range(0F, 1F) < Mathf.Pow(1.0f - mainLogic.concertQuality, 32F))
+                    {
+                        target = mainLogic.musicians[UnityEngine.Random.Range(0, mainLogic.musicians.Length)].gameObject.transform;
+                        rage = Instantiate(ragePrefab, transform.position, Quaternion.identity, transform);
+                        return;
+                    }
+                    if (circlepitRoot != null)
+                    {
+                        StartCoroutine(RunCirlePit());
+                    }
                 }
-                if (circlepitRoot != null)
+                else if (agent.remainingDistance <= agent.stoppingDistance)
                 {
-                    StartCoroutine(RunCirlePit());
+                    chillTimer = Random.Range(0F, 20F);
+                    anim.SetFloat(ANIM_NAME, Random.Range(0F, 0.9F));
+                    agent.SetDestination(waypoints[Random.Range(0, waypoints.Count)]);
                 }
-            }
-            else if (agent.remainingDistance <= agent.stoppingDistance)
-            {
-                chillTimer = Random.Range(0F, 20F);
-                agent.SetDestination(waypoints[Random.Range(0, waypoints.Count)]);
             }
         }
     }

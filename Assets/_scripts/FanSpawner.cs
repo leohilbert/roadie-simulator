@@ -33,6 +33,7 @@ public class FanSpawner : MonoBehaviour
             if (spawnRate++ % 1.5F == 0)
             {
                 fan.circlepitRoot = circlepitRoot;
+                //return;
             }
         }
     }

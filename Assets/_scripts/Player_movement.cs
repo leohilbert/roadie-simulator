@@ -22,26 +22,25 @@ public class Player_movement : MonoBehaviour
     Vector2 movementInput;
     bool jump;
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collider)
     {
-        collided.Add(collision.gameObject);
+        collided.Add(collider.gameObject);
     }
 
-    void OnCollisionExit(Collision collision)
+    void OnTriggerExit(Collider collider)
     {
-        collided.Remove(collision.gameObject);
+        collided.Remove(collider.gameObject);
     }
 
     void OnHit(InputValue value)
     {
-        Debug.Log("Onhit");
         foreach (GameObject collision in collided)
         {
-            Debug.Log(collision);
             Fan fan = collision.GetComponent<Fan>();
             if (fan != null)
             {
-                fan.kick();
+                Debug.Log(fan);
+                fan.kick(transform);
             }
         }
     }

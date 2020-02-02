@@ -30,6 +30,10 @@ public class Fan : MonoBehaviour
 
     void Update()
     {
+        if (!agent.isActiveAndEnabled)
+        {
+            return;
+        }
         if (target != null)
         {
             agent.SetDestination(target.position);
@@ -65,14 +69,20 @@ public class Fan : MonoBehaviour
         }
     }
 
-    public void kick()
+    public void kick(Transform kicker)
     {
         Debug.Log("kick");
         target = null;
 
+        Vector3 origin = transform.position - kicker.position;
+        origin.Normalize();
+        origin.y = 1;
+        Debug.Log(origin);
         Rigidbody body = this.GetComponent<Rigidbody>();
-        //body.isKinematic = false;
-        body.velocity += 20000 * Vector3.up;
+        body.isKinematic = false;
+        GetComponent<NavMeshAgent>().enabled = false;
+        float force = Random.Range(1F, 5F);
+        body.velocity = Vector3.Scale(origin, new Vector3(force, 10, force));
     }
 
     public IEnumerator RunCirlePit()

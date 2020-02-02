@@ -34,8 +34,8 @@ public class Equipment : MonoBehaviour
         {
             isBroken = false;
             GameObject p = collider.gameObject;
-            //while (p.transform.parent)
-            //    p = p.transform.parent.gameObject;
+            while (p.transform.parent)
+                p = p.transform.parent.gameObject;
             Destroy(p);
         }
     }

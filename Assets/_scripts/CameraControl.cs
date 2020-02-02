@@ -4,31 +4,39 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
-    [Header("Cameras")]
+    [Header("Set in Inspector")]
     public GameObject camNormal;
     public GameObject camshakesmall;
     public GameObject camshakemedium;
     public GameObject camshakestrong;
-
-    [Header("Player")]
-    public GameObject player1;
-    public GameObject player2;
-
-    [Header("Boxes")]
+    
     public GameObject boxStage;
     public GameObject boxCrowd;
 
+    public GameObject pointer;
+
+    [Header("Set dynamically")]
+    [SerializeField] GameObject player1;
+    [SerializeField] GameObject player2;
+
+    
     Vector3 camPosBoth = new Vector3(13.3f, 8.4f, 2.6f);
     Quaternion camRotBoth = Quaternion.identity;
 
     Vector3 camPosStage = new Vector3(12.8f, 2.1f, -14.5f);
     Quaternion camRotStage = Quaternion.Euler(356.36f, 0, 0);
 
-    Vector3 camPosCrowd = new Vector3(12.2f, -1.2f, -0.6f);
-    Quaternion camRotCrowd = Quaternion.Euler(341.15f, 0, 0);
+    Vector3 camPosCrowd = new Vector3(13.3f, 3.4f, -0.3f);
+    Quaternion camRotCrowd = Quaternion.Euler(344.75f, 0, 0);
 
     [Header("ShakeLevel")]
     [SerializeField] ShakeLevel shakeLevel = ShakeLevel.none;
+
+    private void Start()
+    {
+        player1 = GameObject.Find("Player_1");
+        player2 = GameObject.Find("Player_2");
+    }
 
     // Update is called once per frame
     void Update()

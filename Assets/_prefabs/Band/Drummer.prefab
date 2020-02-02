@@ -75,7 +75,8 @@ MonoBehaviour:
   equipment: {fileID: 0}
   audioSource: {fileID: 5786448205077211037}
   clipNoError: {fileID: 8300000, guid: fc8beaed0ad2ddc7cbbf3aba6cf4d117, type: 3}
-  clipRhyhthm: {fileID: 8300000, guid: 84d23ab3b4582729aa50bd8ab025bd5f, type: 3}
+  clipRhyhthm: {fileID: 8300000, guid: 598e037d5e77e61d7b8cee1abcd9a8e8, type: 3}
+  clipEquipment: {fileID: 8300000, guid: 84d23ab3b4582729aa50bd8ab025bd5f, type: 3}
 --- !u!136 &2903848974495438601
 CapsuleCollider:
   m_ObjectHideFlags: 0

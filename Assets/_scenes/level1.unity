@@ -3076,7 +3076,7 @@ MonoBehaviour:
   camshakestrong: {fileID: 56165084}
   boxStage: {fileID: 1557090132}
   boxCrowd: {fileID: 343310484}
-  pointer: {fileID: 0}
+  pointer: {fileID: 2047451017}
   player1: {fileID: 839810395}
   player2: {fileID: 1116499045}
   shakeLevel: 0
@@ -4286,6 +4286,12 @@ Transform:
   m_Father: {fileID: 1241636035}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 38, y: 180, z: 0}
+--- !u!1 &2047451017 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6496227994523492569, guid: 65fc26685737160509ae1358090d6cf8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1441524746}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2138677391
 GameObject:
   m_ObjectHideFlags: 0

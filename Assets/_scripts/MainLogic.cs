@@ -12,15 +12,22 @@ public class MainLogic : MonoBehaviour
     public float concertQuality;
 
     GameObject bandometer;
-    GameObject camera;
-    ParticleSystem ps;
+    GameObject camera1, camera2;
+    //ParticleSystem ps;
 
     // Start is called before the first frame update
     void Start()
     {
-        bandometer = GameObject.Find("bandometer");
-        camera = GameObject.Find("Camera");
-        ps = camera.transform.GetChild(4).transform.GetComponent<ParticleSystem>();
+        // bandometer = GameObject.Find("bandometer");
+        camera1 = GameObject.Find("Camera 1");
+        camera2 = GameObject.Find("Camera 2");
+        //ps = camera1.transform.GetChild(4).transform.GetComponent<ParticleSystem>();
+    }
+
+    void SetShakeLevel(ShakeLevel level)
+    {
+        camera1.GetComponent<CameraControl>().ChangeShakeLevel(level);
+        camera2.GetComponent<CameraControl>().ChangeShakeLevel(level);
     }
 
     // Update is called once per frame
@@ -41,33 +48,34 @@ public class MainLogic : MonoBehaviour
         if (concertQuality > 0.9)
         {
             statusText.text = "The Band is rocking!";
-            camera.GetComponent<CameraControl>().ChangeShakeLevel(ShakeLevel.none);
-            camera.GetComponent<CameraControl>().pointer.SetActive(false);
+            SetShakeLevel(ShakeLevel.none);
+            //camera1.GetComponent<CameraControl>().pointer.SetActive(false);
         }
         else if (concertQuality > 0.7)
         {
             statusText.text = "The Band is doing okay!";
-            camera.GetComponent<CameraControl>().ChangeShakeLevel(ShakeLevel.small);
-            camera.GetComponent<CameraControl>().pointer.SetActive(true);
+            SetShakeLevel(ShakeLevel.small);
+            //camera1.GetComponent<CameraControl>().pointer.SetActive(true);
         }
         else if (concertQuality > 0.4)
         {
             statusText.text = "The Band is struggeling!";
-            camera.GetComponent<CameraControl>().ChangeShakeLevel(ShakeLevel.medium);
+            SetShakeLevel(ShakeLevel.medium);
 
         }
         else if (concertQuality > 0.1)
         {
             statusText.text = "The Band is in a bad shape!!";
-            camera.GetComponent<CameraControl>().ChangeShakeLevel(ShakeLevel.strong);
+            SetShakeLevel(ShakeLevel.strong);
         }
         else
         {
             statusText.text = "Game Over!";
+            SetShakeLevel(ShakeLevel.strong);
         }
 
         // rotate the pointer on the bandometer
-        float angle = Mathf.Min(-59, -50f + (concertQuality - 1) * 80f);
-        bandometer.transform.GetChild(0).transform.localRotation = Quaternion.RotateTowards(bandometer.transform.GetChild(0).transform.localRotation, Quaternion.Euler(angle, 0f, 0f), 1f);
+        //float angle = Mathf.Min(-59, -50f + (concertQuality - 1) * 80f);
+        //bandometer.transform.GetChild(0).transform.localRotation = Quaternion.RotateTowards(bandometer.transform.GetChild(0).transform.localRotation, Quaternion.Euler(angle, 0f, 0f), 1f);
     }
 }

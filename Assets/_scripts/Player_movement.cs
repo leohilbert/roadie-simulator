@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class Player_movement : MonoBehaviour
 {
+    private static string ANIM_NAME = "Speed";
+
     public float moveSpeed = 6f;
     public float jumpSpeed = 100f;
     public float gravity = 25f;
@@ -17,10 +19,12 @@ public class Player_movement : MonoBehaviour
 
     List<GameObject> collided = new List<GameObject>();
     private CharacterController characterController;
+    private Animator anim;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        anim = GetComponent<Animator>();
     }
 
     Vector2 movementInput;
@@ -104,6 +108,9 @@ public class Player_movement : MonoBehaviour
         if (moveDirection != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDirection), 0.80F);
+            anim.SetFloat(ANIM_NAME, 1F);
+        }else {
+            anim.SetFloat(ANIM_NAME, 0F);
         }
 
         moveDirection *= moveSpeed;

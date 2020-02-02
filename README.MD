@@ -14,7 +14,7 @@ It is your task to keep the party going and please the crowd.
 
 **Jump:** Space
  
-**Interact:** C or F 
+**Interact:** C or V
 
 ## Player 2
 **Move:** Arrow-Keys

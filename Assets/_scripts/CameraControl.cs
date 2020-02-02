@@ -20,6 +20,7 @@ public class CameraControl : MonoBehaviour
     [SerializeField] GameObject player2;
 
     
+    /*
     Vector3 camPosBoth = new Vector3(13.3f, 8.4f, 2.6f);
     Quaternion camRotBoth = Quaternion.identity;
 
@@ -28,6 +29,7 @@ public class CameraControl : MonoBehaviour
 
     Vector3 camPosCrowd = new Vector3(13.3f, 3.4f, -0.3f);
     Quaternion camRotCrowd = Quaternion.Euler(344.75f, 0, 0);
+    */
 
     [Header("ShakeLevel")]
     [SerializeField] ShakeLevel shakeLevel = ShakeLevel.none;
@@ -71,6 +73,7 @@ public class CameraControl : MonoBehaviour
                 break;
         }
 
+        /*
         if (player1.GetComponent<PlayerParams>().OnStage() && player2.GetComponent<PlayerParams>().OnStage())
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, camPosStage, 0.1f);
@@ -88,6 +91,7 @@ public class CameraControl : MonoBehaviour
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, camPosCrowd, 0.1f);
             gameObject.transform.rotation = Quaternion.RotateTowards(gameObject.transform.rotation, camRotCrowd, 0.1f);
         }
+        */
     }
 
 

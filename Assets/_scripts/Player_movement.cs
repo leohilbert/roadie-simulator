@@ -42,6 +42,12 @@ public class Player_movement : MonoBehaviour
                 Debug.Log(fan);
                 fan.kick(transform);
             }
+
+            Equipment e = collision.GetComponent<Equipment>();
+            if (e)
+            {
+                e.transform.parent = transform;
+            }
         }
     }
 

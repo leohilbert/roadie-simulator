@@ -110,8 +110,8 @@
                 },
                 {
                     "name": "",
-                    "id": "476ded27-e374-412d-a2c4-9ee0d35ce34d",
-                    "path": "<XInputController>/buttonSouth",
+                    "id": "063ef7b9-cdce-46b2-9ccb-740bee3fb216",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -144,7 +144,18 @@
                 {
                     "name": "",
                     "id": "d202f6b9-1f09-44b8-ad68-3d2911fe1e71",
-                    "path": "<XInputController>/buttonEast",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "10bfa982-741d-4fcd-9417-c6e7dafe6fec",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -160,7 +171,7 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "94360c97-3e7d-44f0-9cf6-aa7015490d03",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -170,7 +181,7 @@
                     "name": "Jump",
                     "type": "PassThrough",
                     "id": "eb8b386f-5230-4278-bc00-6cafb077331f",
-                    "expectedControlType": "",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
@@ -241,34 +252,34 @@
                 },
                 {
                     "name": "",
-                    "id": "f4431fb6-3bb1-406b-a49c-f22fa00bbb78",
+                    "id": "11da287f-37fa-401f-b401-01d4efb8f7dc",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cdeb692c-f6dc-45f3-b60f-a63296c4ca9d",
+                    "path": "<Keyboard>/n",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "06ce4157-e681-4fa4-ac71-db9ac9895484",
                     "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "380175af-c795-4bf2-86f0-a77cb654dece",
-                    "path": "<Keyboard>/#(-)",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "11da287f-37fa-401f-b401-01d4efb8f7dc",
-                    "path": "<Keyboard>/shift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Hit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

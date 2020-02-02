@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       74: 1989289236423521904
     second: Default Take
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bandometer
+    second: {fileID: 2100000, guid: bcd0fa0cb430e4b879ccab041b39efd6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: unnamed
+    second: {fileID: 2100000, guid: 7e20d34e9fe91af4982187ae4d6d4a66, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

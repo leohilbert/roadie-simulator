@@ -19,7 +19,7 @@ public class MainLogic : MonoBehaviour
     void Start()
     {
         bandometer = GameObject.Find("bandometer");
-        camera = GameObject.Find("Camera");
+        camera = GameObject.Find("Camera_player1");
         ps = camera.transform.GetChild(4).transform.GetComponent<ParticleSystem>();
     }
 

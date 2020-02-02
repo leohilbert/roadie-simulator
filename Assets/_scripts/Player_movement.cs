@@ -12,6 +12,7 @@ public class Player_movement : MonoBehaviour
     private float vSpeed = 0;
 
     private Equipment equipment;
+    private Transform equipmentParent;
 
     List<GameObject> collided = new List<GameObject>();
     private CharacterController characterController;
@@ -36,19 +37,20 @@ public class Player_movement : MonoBehaviour
 
     void OnHit(InputValue value)
     {
-        Debug.Log(equipment);
         if (equipment)
         {
             // drop equipment
 
             // set player as parent
-            equipment.transform.parent = null; //transform.parent;
+            equipment.transform.parent = equipmentParent; //transform.parent;
 
             // physics again
             equipment.GetComponent<Rigidbody>().isKinematic = false;
 
             // no more
             equipment = null;
+
+            return;
         }
 
         foreach (GameObject collision in collided)
@@ -65,6 +67,7 @@ public class Player_movement : MonoBehaviour
             {
                 // remember me
                 equipment = e;
+                equipmentParent = e.transform.parent;
 
                 // set player as parent
                 e.transform.parent = transform;
@@ -103,7 +106,7 @@ public class Player_movement : MonoBehaviour
         if (characterController.isGrounded)
         {
             vSpeed = -1;
-            if (Input.GetButtonDown("Jump"))
+            if (jump)
             {
                 vSpeed = jumpSpeed;
             }
